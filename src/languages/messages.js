@@ -38,9 +38,19 @@ const messages = {
     },
     selectedLanguage: {
         id: 'selectedLanguage',
-        defaultMessage: 'Lenguaje seleccionado: ',
+        defaultMessage: 'Se ha seleccionado {language} como lenguaje de la aplicación',
         description: '',
     },
+    technology: {
+        id: 'technology',
+        defaultMessage: 'technology',
+        description: '',
+    },    
+    technologies: {
+        id: 'technologies',
+        defaultMessage: 'technologies',
+        description: '',
+    },    
 };
 
 

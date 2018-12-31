@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import {addLocaleData} from 'react-intl';
+import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
 import es from 'react-intl/locale-data/es';
@@ -12,7 +12,10 @@ import es from 'react-intl/locale-data/es';
 addLocaleData([...en, ...fr, ...es]);
 
 ReactDOM.render(
-        <App />
+        <IntlProvider locale={'es'}>
+                <App />
+        </IntlProvider>
+        
 , 
 document.getElementById('root'));
 

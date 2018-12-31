@@ -6,7 +6,9 @@ const es = {
     en: 'Ingles',
     es: 'Español',
     language: 'Lenguaje ',
-    selectedLanguage: 'Lenguaje seleccionado: ',
+    selectedLanguage: 'Se ha seleccionado "{language}" como lenguaje de la aplicación',
+    technology: 'tecnología',
+    technologies: 'tecnologías',    
 };
 
 export default es;

@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import data from './data';
-import Search from './components/Search';
-import List from './components/List';
-import Configuration from './components/Configuration';
 import languages from './languages';
-import {IntlProvider, FormattedMessage} from 'react-intl';
-import messages from './languages/messages';
+import {IntlProvider, injectIntl} from 'react-intl';
+import Home from './Home';
 
 class App extends Component {
 
@@ -18,7 +15,8 @@ class App extends Component {
             }
         },
         search: '',
-        items: data
+        items: data,
+        start: Date.now()
     }
 
     onChangeSearch = search => {
@@ -36,24 +34,18 @@ class App extends Component {
     }
 
     render() {
-        const {theme, lang} = this.state.configurationContext;
-        const {language} = navigator;
+        const {lang} = this.state.configurationContext;
+        //const {language} = navigator;
         return (
-            <IntlProvider locale={language} messages={languages[lang]}>
-                <div className={`app ${theme}`}>
-                    <div className="header">
-                        <h1><FormattedMessage {...messages.learnTitle}/></h1>
-                        <h2>i18n / ReactIntl</h2>
-                    </div>
-                    <Configuration lang={lang} onChangeLang={this.onChangeLang}/>
-                    <Search search={this.state.search} onChangeSearch={this.onChangeSearch}/>
-                    <h2 className="results"><FormattedMessage {...messages.results}/></h2>
-                    <List items={this.state.items}/>
-                </div>
+            <IntlProvider locale={lang} messages={languages[lang]}>
+                <Home
+                    {...this.state}
+                    lang={lang}
+                    onChangeSearch={this.onChangeSearch}
+                    onChangeLang={this.onChangeLang}/>
             </IntlProvider>
-
         );
     }
 }
 
-export default App;
+export default injectIntl(App);

@@ -6,7 +6,9 @@ const en = {
     en: 'English',
     es: 'Spanish',
     language: 'Language ',
-    selectedLanguage: 'Selected Language: ',
+    selectedLanguage: '"{language}" was selected as app\'s language',
+    technology: 'technology',
+    technologies: 'technologies',
 };
 
 export default en;
