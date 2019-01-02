@@ -22,8 +22,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "react-intl-cra": "^0.3.3"
-  }
+  ]
 }

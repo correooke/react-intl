@@ -20,7 +20,7 @@ class App extends Component {
     }
 
     onChangeSearch = search => {
-        const items = data.filter(item => item.title.toLowerCase().includes(search.toLowerCase()));
+        const items = data.filter(this.matchSearch(search));
         this.setState({items, search});
     }
 
@@ -31,6 +31,13 @@ class App extends Component {
                 lang: e.target.value
             }
         });
+    }
+
+    matchSearch(search) {
+        return item => item
+            .title
+            .toLowerCase()
+            .includes(search.toLowerCase());
     }
 
     render() {
