@@ -18,7 +18,7 @@ const messages = {
     },
     learnTitle: {
         id: 'learnTitle',
-        defaultMessage: 'Aprender Context',
+        defaultMessage: 'Aprender i18n',
         description: '',
     },
     en: {
